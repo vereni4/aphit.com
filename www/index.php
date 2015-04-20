@@ -4,49 +4,38 @@ session_start();
 header('Content-Type: text/html; charset= UTF-8');
 
 require_once('config.php');
-require_once('classes/SiteCore.php');
-require_once('classes/SiteLang.php');
+require_once('models/Model.php');
 
-if (isset($_GET['language'])) {
-  $_SESSION['language'] = trim(strip_tags($_GET['language']));
-}
-elseif (!isset($_GET['language']) && !isset($_SESSION['language'])) {
-  $_SESSION['language'] = 'en';
-}
-if ($_SESSION['language'] <> 'en' && $_SESSION['language'] <> 'ua') {
-  $_SESSION['language'] = 'en';
-}
+$_model = new Model();
+$_model -> setLanguage();
 
-$_included_file = './languages/' . $_SESSION['language'] . '.php';
-if (file_exists($_included_file)) {
-  $_lang_array_ = include $_included_file;
-}
-else {
-  $_lang_array_ = include './languages/en.php';
-}
+$_lang_array_ = include './languages/' . $_model -> language . '.php';
 
-$_class = 'Main';
-
-if (isset($_GET['option'])) {
-  $_class = trim(strip_tags($_GET['option']));
-}
-
-$_included_file = 'classes/' . $_class . '.php';
-
-if (file_exists($_included_file)) {
-  
-  include_once($_included_file);
-  
-  if (class_exists($_class)) {
-    $_body_object = new $_class();
-    $_body_object -> getBody();
+function __autoload($_file_name) {
+  if (file_exists('controllers/' . $_file_name . '.php')) {
+    require_once('controllers/' . $_file_name . '.php');
+  }
+  elseif (file_exists('models/' . $_file_name . '.php')) {
+    require_once('models/' . $_file_name . '.php');
   }
   else {
-    exit(SiteLang::getRending('ERROR_1'));
+    exit(SiteLang::getRending('ERROR_2'));
   }
 }
-else {
-  exit(SiteLang::getRending('ERROR_2'));
+
+$_class_controller = 'Main';
+
+if (isset($_GET['option'])) {
+  $_class_controller = trim(strip_tags($_GET['option']));
 }
 
+if (class_exists($_class_controller)) {
+ 
+  $_body_controller = new $_class_controller($_model);
+  $_body_controller -> getBody($_class_controller);
+
+}
+else {
+  exit(SiteLang::getRending('ERROR_1'));
+}
 ?>
