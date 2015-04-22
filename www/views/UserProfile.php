@@ -1,7 +1,7 @@
 <p class="heading2">
   <?php echo $_content['login'] ?>
 </p>
-<img style="margin-right: 5px; width: 150px; height: 150px; float: left" src="<?php echo $_content['avatar'] ?>" alt="">
+<img class="avatar" src="<?php echo $_content['avatar'] ?>" alt="">
 
 <?php if(!empty($this -> currentUser)): ?>
   <p><?php echo SiteLang::getRending('EMAIL') . ' ' . $_content['email'] ?></p>

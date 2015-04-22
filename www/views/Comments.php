@@ -36,7 +36,7 @@
             </a>
           <?php endif; ?>
         </p>
-        <p class="heading2" style="font-size:15px">
+        <p class="heading2">
           <?php echo $_comment['title'] ?>
         </p>
         <p><?php echo $_comment['text'] ?></p>

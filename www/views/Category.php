@@ -1,15 +1,15 @@
 <?php if (!empty($_content['ERROR'])): ?>
-  <p class='heading2' style='font-size:18px'>
+  <p class='heading2'>
     <?php echo $_content['ERROR'] ?>
   </p>
 <?php else: ?>
   <?php foreach ($_content['articles'] as $_row): ?>
 
-    <div style="margin: 10px; border-bottom: 2px solid #c2c2c2; height: 180px">
-      <p class="heading2" style="font-size:18px"><?php echo $_row['title'] ?></p>
+    <div class="article">
+      <p class="heading2"><?php echo $_row['title'] ?></p>
       <p class="author"><?php echo $_row['author'] . ' | ' . $_row['date'] ?></p>
       <p>
-        <img style="margin-right:5px; width:150px; float: left" src="<?php echo $_row['img_src'] ?>" alt="">
+        <img src="<?php echo $_row['img_src'] ?>" alt="">
         <?php echo $_row['discription'] ?>
       </p>
       <p>

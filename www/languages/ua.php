@@ -2,6 +2,7 @@
 
 return array(
   // HEADER
+  'UA'            => 'Українська',
   'TITLE'         => 'APHIT.COM',
   'LOGO'          => 'Автомобілі, подорожі, хоббі і т.п.',
   'LANG'          => 'Мова',

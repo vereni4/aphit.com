@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title><?php echo SiteLang::getRending('TITLE') ?></title>
-  <link href="styles/style.css" rel="stylesheet" type="text/css" />
+  <link href="styles/new-style.css" rel="stylesheet" type="text/css" />
   <script title="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
   <script title="text/javascript" src="/js/MainScript.js"></script>
 </head>
@@ -11,10 +11,10 @@
   <div id="language">
     <p><?php echo SiteLang::getRending('LANG'); ?>: 
       <a href="?language=en">
-        <img style="margin-right: 1px; width: 17px" src="./images/flag_en.jpg" alt="">English
+        <img src="./images/flag_en.jpg" alt="">English
       </a> | 
       <a href="?language=ua">
-        <img style="margin-right: 1px; width: 17px" src="./images/flag_ua.jpg" alt="">Українська
+        <img src="./images/flag_ua.jpg" alt=""><?php echo SiteLang::getRending('UA'); ?>
       </a>
     </p>
   </div>
@@ -68,7 +68,7 @@
 
     <div id="mainarea">
       <div class="heading">
-        <div class="toplinks" style="padding-left:30px;">
+        <div class="toplinks">
           <a href="?option=Main"><?php echo SiteLang::getRending('MAIN') ?></a>
         </div>
 
@@ -92,7 +92,7 @@
 
     </div>
     <div id="bottom">
-      <div class="toplinks" style="padding-left:127px;">
+      <div class="toplinks">
         <a href="?option=Main"><?php echo SiteLang::getRending('MAIN') ?></a>
       </div>
       <?php foreach ($_menu_items as $_row): ?>

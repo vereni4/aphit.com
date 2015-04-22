@@ -1,6 +1,6 @@
 <?php if (!empty($this -> currentUser)): ?>
 <form enctype="multipart/form-data" action="" method="POST">
-  <p id="article-edit">
+  <p class="article-edit">
     <?php foreach ($this -> languages as $_key_lang => $_lang): ?>
       <span id="article-languages-<?php echo $_key_lang ?>"> <?php echo $_lang ?> </span>
     <?php endforeach; ?>

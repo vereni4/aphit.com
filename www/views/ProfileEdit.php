@@ -8,28 +8,28 @@
     </p>
     <p>
       <lable for="login"><?php echo SiteLang::getRending('LOGIN_2') ?></lable>
-      <input type="text" name="login" value="<?php echo $_content['login'] ?>" style="width:100px" required>
+      <input type="text" name="login" value="<?php echo $_content['login'] ?>"required>
       <input type="hidden" name="user_id" value="<?php echo $_content['id'] ?>">
     </p>
     <p>
       <lable for="email"><?php echo SiteLang::getRending('EMAIL') ?></lable>
-      <input type="email" name="email" value="<?php echo $_content['email'] ?>" style="width:100px" required>
+      <input type="email" name="email" value="<?php echo $_content['email'] ?>" required>
     </p>
     <p>
       <lable for="user_name"><?php echo SiteLang::getRending('NAME') ?>:</lable>
-      <input type="text" name="user_name" value="<?php echo $_content['name'] ?>" style="width:100px">
+      <input type="text" name="user_name" value="<?php echo $_content['name'] ?>">
     </p>
     <p>
       <lable for="user_surname"><?php echo SiteLang::getRending('SURNAME') ?>:</lable>
-      <input type="text" name="user_surname" value="<?php echo $_content['surname'] ?>" style="width:100px">
+      <input type="text" name="user_surname" value="<?php echo $_content['surname'] ?>">
     </p>
     <p>
       <lable for="password"><?php echo SiteLang::getRending('PASS') ?></lable>
-      <input type="password" name="password" style="width:100px">
+      <input type="password" name="password">
     </p>
     <p>
       <lable for="password_2"><?php echo SiteLang::getRending('PASS_2') ?></lable>
-      <input type="password" name="password_2" style="width:100px">
+      <input type="password" name="password_2">
     </p>
     <p>
       <input type="submit" name="button" value="<?php echo SiteLang::getRending('SAVE') ?>">

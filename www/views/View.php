@@ -1,17 +1,17 @@
 <?php if (!empty($_content['ERROR'])): ?>
-  <p class='heading2' style='font-size:18px'>
+  <p class='heading2'>
     <?php echo $_content['ERROR'] ?>
   </p>
 <?php else: ?>
   <?php $_article = $_content['article']; ?>
-  <p class='heading2' style='font-size:18px'>
+  <p class='heading2'>
     <?php echo $_article['title'] ?>
   </p>
   <p class='author'>
     <?php echo $_article['author'] ?> | <?php echo $_article['date'] ?>
   </p>
   <p>
-    <img style='margin-right:5px; width: 150px; float: left' src='<?php echo $_article['img_src'] ?>' alt=''>
+    <img src='<?php echo $_article['img_src'] ?>' alt=''>
     <?php echo $_article['text'] ?>
   </p>
 

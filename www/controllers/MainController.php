@@ -32,7 +32,7 @@ abstract class MainController {
   public function __construct($_model) {
 
     $this -> model = $_model;
-    $this -> languages = array('en' => 'English', 'ua' => 'Українська');
+    $this -> languages = array('en' => 'English', 'ua' => SiteLang::getRending('UA'));
 
     if (!empty($_SESSION['current_user']) && !empty($_SESSION['current_user_id'])) {
       $this -> currentUser = trim(strip_tags($_SESSION['current_user']));
